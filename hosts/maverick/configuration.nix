@@ -33,7 +33,7 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     53
-    300
+    3000
     80
   ];
   networking.firewall.allowedUDPPorts = [
