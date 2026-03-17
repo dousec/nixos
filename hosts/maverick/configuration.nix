@@ -1,8 +1,9 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    ./programs/services.nix
   ];
 
   boot.loader.grub.enable = true;
@@ -14,11 +15,6 @@
   time.timeZone = "America/Guayaquil";
 
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
 
   programs.git.enable = true;
 
@@ -35,8 +31,16 @@
   # };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53 300 80 ];
-  networking.firewall.allowedUDPPorts = [ 53 3000 80 ];
+  networking.firewall.allowedTCPPorts = [
+    53
+    300
+    80
+  ];
+  networking.firewall.allowedUDPPorts = [
+    53
+    3000
+    80
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
