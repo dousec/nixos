@@ -1,6 +1,7 @@
 { inputs, ... }:
 let
   inherit (inputs) self;
+
   mkLinuxStandard =
     path:
     self.nixos-unified.lib.mkLinuxSystem
@@ -10,8 +11,7 @@ let
       {
         nixpkgs.hostPlatform = "x86_64-linux";
         imports = [
-          ./../users/default.nix
-          ./../hosts/common.nix
+          "${self}/users/default.nix"
           path
         ];
       };
