@@ -7,7 +7,10 @@
     age.keyFile = "/root/.config/sops/age/keys.txt";
 
     secrets = {
-      test = { };
+      "users/paulov/pass" = { };
+
+      "nextcloud/adminpass" = { };
+      "nextcloud/dbpass" = { };
     };
   };
 }

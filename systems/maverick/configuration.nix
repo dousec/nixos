@@ -7,6 +7,7 @@
       (map (ctx: ./programs/${ctx}) (attrNames (readDir ./programs)))
       [
         ./hardware-configuration.nix
+        ./secrets.nix
       ]
     ]
   );
@@ -35,6 +36,7 @@
   networking.firewall.allowedTCPPorts = [
     53
     3000
+    3001
     80
   ];
   networking.firewall.allowedUDPPorts = [
