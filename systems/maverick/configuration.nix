@@ -35,13 +35,11 @@
   };
 
   networking.firewall.allowedTCPPorts = [
-    53
-    3000
-    3001
-    80
+    53 # dns resolver
+    80 # http traffic, most commonly addressed by cloudflare tunnel
   ];
   networking.firewall.allowedUDPPorts = [
-    53
+    53 # udp dns resolver
   ];
   system.stateVersion = "25.11"; # Yes, I read the comment
 }

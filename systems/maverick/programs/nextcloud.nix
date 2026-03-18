@@ -17,7 +17,7 @@
       webserver = "caddy";
       configureRedis = true;
       config = {
-        adminpassFile = config.sops.secrets."nextcloud/admin/pass".path;
+        adminpassFile = config.sops.secrets."users/root/pass".path;
         dbtype = "pgsql";
       };
       database = {

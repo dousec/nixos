@@ -7,11 +7,13 @@
     age.keyFile = "/root/.config/sops/age/keys.txt";
 
     secrets = {
+      "users/root/pass" = { };
       "users/paulov/pass" = { };
 
       "msmtp/users/default/pass" = { };
 
-      "nextcloud/admin/pass" = { };
+      "api/gemini/token" = { };
+      "api/groq/token" = { };
     };
   };
 }

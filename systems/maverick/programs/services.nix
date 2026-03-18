@@ -1,25 +1,16 @@
 { pkgs, ... }:
 {
   services = {
-
     openssh = {
       enable = true;
-    };
-
-    # cloudflared = {
-    #   enable = true;
-    # };
-    #
-
-    # caddy = {
-    #   enable = true;
-    #   extraConfig = "
-    #             ";
-    # };
-
-    adguardhome = {
-      enable = true;
-      port = 3000;
+      settings = {
+        Macs = [
+          "hmac-sha2-512-etm@openssh.com"
+          "hmac-sha2-256-etm@openssh.com"
+          "umac-128-etm@openssh.com"
+          "hmac-sha2-256"
+        ];
+      };
     };
 
     postgresql = {
