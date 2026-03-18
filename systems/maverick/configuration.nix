@@ -4,11 +4,11 @@
   imports = (
     with builtins;
     concatLists [
-      (map (ctx: ./programs/${ctx}) (attrNames (readDir ./programs)))
       [
         ./hardware-configuration.nix
         ./secrets.nix
       ]
+      (map (ctx: ./programs/${ctx}) (attrNames (readDir ./programs)))
     ]
   );
 
