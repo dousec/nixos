@@ -14,6 +14,9 @@
         analytics = {
           reporting_enabled = false;
         };
+        security = {
+          secret_key = "$(cat ${config.sops.secrets."grafana/secret_key".path})";
+        };
       };
       provision = {
         enable = true;

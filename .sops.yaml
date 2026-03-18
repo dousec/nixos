@@ -1,5 +1,6 @@
 keys:
-  - &server_maverick b82c4ca4c95f649438a96d9da1f675d8ffb344fd
+  - &server_maverick age176r0juvmv0fmaq6zkrswhqjcn7a4atjra7hedfydagr4tfnf5vqs89y68d
+  - &admin_paulov age15gwvllh0e2ngluc0q2csn23n86hefcqphf9h9yzrc4twq55fn52sum8nq7
 creation_rules:
   - path_regex: secrets/maverick/[^/]+\.(yaml|json|env|ini)$
     key_groups:

@@ -6,8 +6,8 @@
       defaults.email = "root@dousec.org";
       certs = {
         "dousec.org" = {
+          webroot = "/var/lib/acme/acme-challenge";
           group = "nginx";
-          allowKeysForGroup = true;
         };
       };
     };

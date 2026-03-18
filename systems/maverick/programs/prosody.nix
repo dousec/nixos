@@ -5,7 +5,7 @@ in
 {
   services = {
     prosody = {
-      enable = true;
+      enable = false;
       admins = [ "paulov@dousec.org" ];
       allowRegistration = false;
       ssl = {

@@ -12,6 +12,8 @@
 
       "msmtp/users/default/pass" = { };
 
+      "grafana/secret_key" = { };
+
       "api/gemini/token" = { };
       "api/groq/token" = { };
     };
