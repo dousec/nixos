@@ -2,14 +2,17 @@
 {
   programs.msmtp = {
     enable = true;
+    defaults = {
+      tls = true;
+      port = 587;
+    };
     accounts = {
       default = {
-        tls = true;
         auth = true;
-        host = "dousec.org";
+        host = "mail.dousec.org";
         from = "noreply@dousec.org";
         user = "noreply@dousec.org";
-        passwordeval = "cat ${config.sops.secret."msmtp/users/default/pass".path}";
+        passwordeval = "cat ${config.sops.secrets."msmtp/users/default/pass".path}";
       };
     };
   };
