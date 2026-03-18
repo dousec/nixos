@@ -1,10 +1,15 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./programs/services.nix
-  ];
+  imports = (
+    with builtins;
+    concatLists [
+      (map (ctx: ./programs/${ctx}) (attrNames (readDir ./programs)))
+      [
+        ./hardware-configuration.nix
+      ]
+    ]
+  );
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda";
@@ -20,17 +25,13 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    sops
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # Open ports in the firewall.
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   networking.firewall.allowedTCPPorts = [
     53
     3000
@@ -39,9 +40,5 @@
   networking.firewall.allowedUDPPorts = [
     53
   ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   system.stateVersion = "25.11"; # Yes, I read the comment
-
 }

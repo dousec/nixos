@@ -1,6 +1,11 @@
 { ... }:
 {
   services = {
+
+    openssh = {
+      enable = true;
+    };
+
     # cloudflared = {
     #   enable = true;
     # };
