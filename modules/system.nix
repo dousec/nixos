@@ -13,11 +13,14 @@ let
         imports = [
           "${self}/users/default.nix"
           path
+        ]
+        ++ [
+          inputs.sops-nix.nixosModules.sops
         ];
       };
 in
 {
   flake.nixosConfigurations = {
-    maverick = mkLinuxStandard ../hosts/maverick/configuration.nix;
+    maverick = mkLinuxStandard "${self}/systems/maverick/configuration.nix";
   };
 }

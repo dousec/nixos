@@ -12,6 +12,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
   outputs =
@@ -28,7 +31,7 @@
         ]
       );
 
-      systems = [ "x86_64-linux" ];
+      systems = [ "x86_64-linux" ]; # add more system if you have to
 
       perSystem =
         {
