@@ -33,6 +33,7 @@
     enable = true;
     enableSSHSupport = true;
   };
+
   networking.firewall.allowedTCPPorts = [
     53
     3000

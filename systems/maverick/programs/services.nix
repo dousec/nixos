@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services = {
 
@@ -10,6 +10,7 @@
     #   enable = true;
     # };
     #
+
     # caddy = {
     #   enable = true;
     #   extraConfig = "
@@ -21,5 +22,9 @@
       port = 3000;
     };
 
+    postgresql = {
+      enable = true;
+      package = pkgs.postgresql_16;
+    };
   };
 }

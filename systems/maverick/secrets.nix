@@ -9,8 +9,9 @@
     secrets = {
       "users/paulov/pass" = { };
 
-      "nextcloud/adminpass" = { };
-      "nextcloud/dbpass" = { };
+      "msmtp/users/default/pass" = { };
+
+      "nextcloud/admin/pass" = { };
     };
   };
 }

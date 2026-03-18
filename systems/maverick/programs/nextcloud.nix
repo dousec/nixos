@@ -9,22 +9,35 @@
     }/nextcloud-extras.nix"
   ];
 
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud33;
-    hostName = "192.168.122.28";
-    configureRedis = true;
-    config = {
-      adminpassFile = config.sops.secrets."nextcloud/adminpass".path;
-      dbpassFile = config.sops.secrets."nextcloud/dbpass".path;
-      dbtype = "pgsql";
-    };
-    ensureUsers = {
-      paulov = {
-        email = "paulov@dousec.org";
-        passwordFile = config.sops.secrets."users/paulov/pass".path;
+  services = {
+    nextcloud = {
+      enable = true;
+      package = pkgs.nextcloud33;
+      hostName = "cloud.dousec.org";
+      webserver = "caddy";
+      configureRedis = true;
+      config = {
+        adminpassFile = config.sops.secrets."nextcloud/admin/pass".path;
+        dbtype = "pgsql";
+      };
+      database = {
+        createLocally = true;
+      };
+      ensureUsers = {
+        paulov = {
+          email = "paulov@dousec.org";
+          passwordFile = config.sops.secrets."users/paulov/pass".path;
+        };
+      };
+      settings = {
+        mail_smtpmode = "sendmail";
+        mail_sendmailmode = "pipe";
       };
     };
-    webserver = "caddy";
+
+    redis.servers.nextcloud = {
+      enable = true;
+      port = 0;
+    };
   };
 }
