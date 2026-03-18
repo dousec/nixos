@@ -6,3 +6,4 @@ creation_rules:
     key_groups:
     - pgp:
       - *server_maverick
+      - *admin_paulov
