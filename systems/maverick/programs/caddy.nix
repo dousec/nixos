@@ -32,7 +32,7 @@ in
 
         "dashboard.me:80".extraConfig = ''
           	  tls internal
-                    reverse_proxy http://localhost:${get grafana.settings.server.http_port}
+                  reverse_proxy http://localhost:${get grafana.settings.server.http_port}
         '';
 
         # "n8n.me:80".extraConfig = ''
@@ -44,6 +44,12 @@ in
           	  tls internal
           	  reverse_proxy http://localhost:${get litellm.port}
           	'';
+	
+	"dousec.org:80".extraConfig = ''
+		  tls internal
+		  root * /var/lib/www/dousec.org
+		  file_server
+		'';
       };
     };
   };
