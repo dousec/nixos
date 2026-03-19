@@ -7,6 +7,10 @@
     age.keyFile = "/root/.config/sops/age/keys.txt";
 
     secrets = {
+      "user-password" = {
+      	owner = "writefreely"; # writefreely requests it
+      };
+
       "users/root/pass" = { };
       "users/paulov/pass" = { };
 
@@ -16,6 +20,13 @@
 
       "api/gemini/token" = { };
       "api/groq/token" = { };
+
+      "cloudflared/tunnel/argo_key" = { };
+      "cloudflared/dns/token" = { };
+
+      "chisel/pass" = { };
+
+      "attic/server-token" = { };
     };
   };
 }

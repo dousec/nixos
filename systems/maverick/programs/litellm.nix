@@ -4,7 +4,6 @@
     litellm = {
       enable = true;
       port = 8085;
-      host = "litellm.me";
       openFirewall = true;
       settings = {
         model_list = [

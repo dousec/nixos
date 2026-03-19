@@ -9,7 +9,7 @@
           http_port = 8084;
           enforce_domain = true;
           enable_gzip = true;
-          domain = "dashboard.me";
+          domain = "foo.dousec.org";
         };
         analytics = {
           reporting_enabled = false;

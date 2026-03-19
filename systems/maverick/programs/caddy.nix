@@ -1,4 +1,8 @@
-{ ... }:
+{ config, ... }:
+let
+  inherit (config.services) adguardhome grafana litellm;
+  get = opt: toString opt;
+in
 {
   security = {
     acme = {
@@ -6,8 +10,12 @@
       defaults.email = "root@dousec.org";
       certs = {
         "dousec.org" = {
-          webroot = "/var/lib/acme/acme-challenge";
-          group = "nginx";
+          group = "prosody";
+          extraDomainNames = [
+            "*.dousec.org"
+          ];
+          dnsProvider = "cloudflare";
+          credentialsFile = config.sops.secrets."cloudflared/dns/token".path;
         };
       };
     };
@@ -17,7 +25,25 @@
     caddy = {
       enable = true;
       virtualHosts = {
-        "".extraConfig = ""; # pending config
+        "dns.me:80".extraConfig = ''
+          	  tls internal
+          	  reverse_proxy http://localhost:${get adguardhome.port}
+          	'';
+
+        "dashboard.me:80".extraConfig = ''
+          	  tls internal
+                    reverse_proxy http://localhost:${get grafana.settings.server.http_port}
+        '';
+
+        # "n8n.me:80".extraConfig = ''
+        #          	  tls internal
+        #          	  reverse_proxy http://localhost:${get n8n.environment.N8N_PORT}
+        #          	'';
+
+        "litellm.me:80".extraConfig = ''
+          	  tls internal
+          	  reverse_proxy http://localhost:${get litellm.port}
+          	'';
       };
     };
   };

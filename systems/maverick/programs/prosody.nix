@@ -5,7 +5,7 @@ in
 {
   services = {
     prosody = {
-      enable = false;
+      enable = true;
       admins = [ "paulov@dousec.org" ];
       allowRegistration = false;
       ssl = {
@@ -24,12 +24,17 @@ in
           restrictRoomCreation = true;
         }
       ];
+      httpFileShare = {
+        domain = "upload.dousec.org";
+      };
       extraConfig = ''
-        storage = "sql"
-        sql = {
-          driver = "SQLite3";
-          database = "prosody.sqlite"; -- The database name to use. For SQLite3 this the database filename (relative to the data storage directory).
-        }
+                storage = "sql"
+                sql = {
+                  driver = "SQLite3";
+                  database = "prosody.sqlite";
+                }
+
+        	external_addresses = { "129.153.185.116" } -- i have to forward ports to my vps for tcp/udp connection :p
       '';
     };
   };
