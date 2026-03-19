@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  inherit (config.services) grafana;
+  inherit (config.services) grafana memos;
   get = opt: toString opt;
 in
 {
@@ -12,6 +12,15 @@ in
           credentialsFile = config.sops.secrets."cloudflared/tunnel/argo_key".path;
           ingress = {
             "foo.dousec.org" = "http://localhost:${get grafana.settings.server.http_port}";
+
+            "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
+
+            # xmpp and mail are handled by chisel server side
+
+            # caddy handled
+            "cloud.dousec.org" = "http://localhost:80";
+            "dousec.org" = "http://localhost:80";
+            "paulov.dousec.org" = "http://localhost:80";
           };
           default = "http_status:404";
         };
