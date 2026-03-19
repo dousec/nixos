@@ -8,7 +8,7 @@
 
     secrets = {
       "user-password" = {
-      	owner = "writefreely"; # writefreely requests it
+        owner = "writefreely"; # writefreely requests it
       };
 
       "users/root/pass" = { };
@@ -27,6 +27,8 @@
       "chisel/pass" = { };
 
       "attic/server-token" = { };
+
+      "github/dousec/runner" = { };
     };
   };
 }

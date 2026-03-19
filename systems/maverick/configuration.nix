@@ -8,6 +8,7 @@
         ./hardware-configuration.nix
         ./secrets.nix
       ]
+      (map (ctx: ./actions/${ctx}) (attrNames (readDir ./actions)))
       (map (ctx: ./programs/${ctx}) (attrNames (readDir ./programs)))
     ]
   );
