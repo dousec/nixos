@@ -22,7 +22,9 @@
       "api/groq/token" = { };
 
       "cloudflared/tunnel/argo_key" = { };
-      "cloudflared/dns/token" = { };
+      "cloudflared/dns/token" = {
+        owner = "acme";
+      };
 
       "chisel/pass" = { };
 

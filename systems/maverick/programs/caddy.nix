@@ -44,12 +44,12 @@ in
           	  tls internal
           	  reverse_proxy http://localhost:${get litellm.port}
           	'';
-	
-	"dousec.org:80".extraConfig = ''
-		  tls internal
-		  root * /var/lib/www/dousec.org
-		  file_server
-		'';
+
+        "dousec.org:80".extraConfig = ''
+          		  tls internal
+          		  root * /var/lib/www/dousec.org
+          		  file_server
+          		'';
       };
     };
   };

@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  inherit (config.services) grafana memos;
+  inherit (config.services) grafana memos writefreely;
   get = opt: toString opt;
 in
 {
@@ -13,6 +13,7 @@ in
           ingress = {
             "foo.dousec.org" = "http://localhost:${get grafana.settings.server.http_port}";
 
+            "blog.dousec.org" = "http://localhost:${get writefreely.settings.server.port}";
             "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
 
             # xmpp and mail are handled by chisel server side

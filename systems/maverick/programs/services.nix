@@ -28,19 +28,20 @@
         # wantedBy = [ "multi-user.target" ];
 
         serviceConfig = {
-          ExecStart = ''
-            ${pkgs.chisel}/bin/chisel client \
-              --auth "ecx12fms:$(cat ${config.sops.secrets."chisel/pass".path})" \
-              129.153.185.116:8028 \
-              5222:5222 \
-              5269:5269 \
-              5280:5280 \
-              5281:5281
-          '';
           Restart = "always";
           RestartSec = "5s";
           User = "root";
         };
+
+        script = ''
+          ${pkgs.chisel}/bin/chisel client \
+            --auth "ecx12fms:$(cat ${config.sops.secrets."chisel/pass".path})" \
+            129.153.185.116:8028 \
+            R:0.0.0.0:5222:127.0.0.1:5222 \
+            R:0.0.0.0:5269:127.0.0.1:5269 \
+            R:0.0.0.0:5280:127.0.0.1:5280 \
+            R:0.0.0.0:5281:127.0.0.1:5281
+        '';
       };
     };
   };

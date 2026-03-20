@@ -17,6 +17,10 @@ in
           domain = "dousec.org";
           enabled = true;
         };
+	"xmpp.dousec.org" = {
+          domain = "xmpp.dousec.org";
+          enabled = true;
+        };
       };
       muc = [
         {
