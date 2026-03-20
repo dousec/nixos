@@ -1,9 +1,11 @@
 keys:
-  - &server_maverick age176r0juvmv0fmaq6zkrswhqjcn7a4atjra7hedfydagr4tfnf5vqs89y68d
+  - &qemu_maverick age176r0juvmv0fmaq6zkrswhqjcn7a4atjra7hedfydagr4tfnf5vqs89y68d
+  - &server_maverick age1r2wweckanmcefynnz0fzglumfvgk6v4k6ckgzvdkg6fddrwyl9wqlwx84a
   - &admin_paulov age15gwvllh0e2ngluc0q2csn23n86hefcqphf9h9yzrc4twq55fn52sum8nq7
 creation_rules:
   - path_regex: secrets/maverick/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
+      - *qemu_maverick
       - *server_maverick
       - *admin_paulov
