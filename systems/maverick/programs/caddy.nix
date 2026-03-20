@@ -46,19 +46,19 @@ in
           	'';
 
         "dousec.org:80".extraConfig = ''
-	          tls internal
-          	  root * /var/lib/www/dousec.org
-          	  file_server
-          	'';
-	
-	"paulov.dousec.org:80".extraConfig = ''
-		  tls internal
-		  handle /twtxt.txt {
-		  	root * /var/lib/www/paulov.dousec.org
-			file_server
-		  }
-		  respond "proxy unauthorized"
-		'';
+          	          tls internal
+                    	  root * /var/lib/www/dousec.org
+                    	  file_server
+                    	'';
+
+        "paulov.dousec.org:80".extraConfig = ''
+          		  tls internal
+          		  handle /twtxt.txt {
+          		  	root * /var/lib/www/paulov.dousec.org
+          			file_server
+          		  }
+          		  respond "proxy unauthorized"
+          		'';
       };
     };
   };

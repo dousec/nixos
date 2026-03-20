@@ -50,14 +50,14 @@
             }
           ];
         }
-	{
-	  job_name = "USZ10FMS Node";
-	  static_configs = [
-	    {
-	      targets = [ "129.153.185.116:8099" ];
-	    }
-	  ];
-	}
+        {
+          job_name = "USZ10FMS Node";
+          static_configs = [
+            {
+              targets = [ "129.153.185.116:8099" ];
+            }
+          ];
+        }
       ];
       exporters = {
         node = {
