@@ -16,6 +16,8 @@ in
             "blog.dousec.org" = "http://localhost:${get writefreely.settings.server.port}";
             "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
 
+            "attic.dousec.org" = "http://localhost:8081";
+
             # xmpp and mail are handled by chisel server side
 
             # caddy handled
