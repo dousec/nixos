@@ -21,6 +21,10 @@ in
           domain = "xmpp.dousec.org";
           enabled = true;
         };
+        "meets.dousec.org" = {
+          domain = "meets.dousec.org";
+          enabled = true;
+        };
       };
       muc = [
         {
@@ -31,14 +35,18 @@ in
       httpFileShare = {
         domain = "upload.dousec.org";
       };
+      modules = {
+        http_files = true;
+      };
       extraConfig = ''
-                storage = "sql"
-                sql = {
-                  driver = "SQLite3";
-                  database = "prosody.sqlite";
-                }
+                        storage = "sql"
+                        sql = {
+                          driver = "SQLite3";
+                          database = "prosody.sqlite";
+                        }
 
-        	external_addresses = { "129.153.185.116" } -- i have to forward ports to my vps for tcp/udp connection :p
+        		http_external_url = "https://upload.dousec.org/"
+                	external_addresses = { "129.153.185.116" } -- i have to forward ports to my vps for tcp/udp connection :p
       '';
     };
   };

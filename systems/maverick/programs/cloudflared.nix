@@ -22,7 +22,6 @@ in
 
             # caddy handled
             "cloud.dousec.org" = "http://localhost:80";
-            "meets.dousec.org" = "http://localhost:80";
             "dousec.org" = "http://localhost:80";
             "paulov.dousec.org" = "http://localhost:80";
           };
