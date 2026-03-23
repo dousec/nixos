@@ -24,6 +24,10 @@
     "net.core.wmem_max" = 7500000;
   };
 
+  hardware.graphics.enable = true;
+  hardware.nvidia.open = false;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   networking.hostName = "maverick";
   networking.networkmanager.enable = true;
 
@@ -34,8 +38,9 @@
   environment.systemPackages = with pkgs; [
     neovim
     sops
-    cloudflared
+    # cloudflared use it log in
     chisel
+    attic-client
   ];
 
   programs.git.enable = true;
@@ -52,17 +57,6 @@
   networking.firewall.allowedUDPPorts = [
     53 # udp dns resolver
   ];
-
-  nix = {
-    settings = {
-      substituters = [
-        "https://nix-community.cachix.org/"
-      ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
-    };
-  };
 
   system.stateVersion = "25.11"; # Yes, I read the comment
 }

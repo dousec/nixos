@@ -59,6 +59,13 @@ in
           		  }
           		  respond "proxy unauthorized"
           		'';
+
+	"jesus.dousec.org:80".extraConfig = ''
+          		  tls internal
+			  root * /var/lib/www/jesus.dousec.org
+			  file_server
+          		'';
+
       };
     };
   };
