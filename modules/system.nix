@@ -10,13 +10,14 @@ let
       }
       {
         nixpkgs.hostPlatform = "x86_64-linux";
-        nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.allowUnfree = true; # propietary CUDA drivers for NVIDIA GPUs
         imports = [
           "${self}/users/default.nix"
           path
         ]
         ++ [
           inputs.sops-nix.nixosModules.sops
+          inputs.nix-topology.nixosModules.default
         ];
       };
 in

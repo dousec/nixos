@@ -58,5 +58,11 @@
     53 # udp dns resolver
   ];
 
+  topology = {
+    self = {
+      hardware.info = "i5 6400 16GB DDR4 GTX 1060 3GB SSD 1TB";
+    };
+  };
+
   system.stateVersion = "25.11"; # Yes, I read the comment
 }

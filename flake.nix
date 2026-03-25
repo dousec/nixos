@@ -15,6 +15,7 @@
     sops-nix.url = "github:mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-topology.url = "github:oddlama/nix-topology";
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
   outputs =
@@ -27,6 +28,7 @@
           [
             inputs.treefmt-nix.flakeModule
             inputs.nixos-unified.flakeModules.default
+            inputs.nix-topology.flakeModule
           ]
         ]
       );
