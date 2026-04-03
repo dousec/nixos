@@ -11,9 +11,7 @@
       settings = {
         app = {
           site_name = "Dou";
-          landing = "/read";
           wf_modesty = true;
-          simple_nav = true;
         };
         server = {
           port = 8083;
