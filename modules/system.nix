@@ -11,6 +11,7 @@ let
       {
         nixpkgs.hostPlatform = "x86_64-linux";
         nixpkgs.config.allowUnfree = true; # propietary CUDA drivers for NVIDIA GPUs
+	nixpkgs.config.nvidia.acceptLicense = true;
         imports = [
           "${self}/users/default.nix"
           path

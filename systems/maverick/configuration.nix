@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = (
@@ -24,9 +24,11 @@
     "net.core.wmem_max" = 7500000;
   };
 
-  hardware.graphics.enable = true;
-  hardware.nvidia.open = false;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # hardware.graphics.enable = true;
+  # hardware.nvidia.open = false;
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+  # gtx 1060 is now legacy, pascal generation is no longer supported by latest drivers.
+  # services.xserver.videoDrivers = [ "nvidia" ];
 
   networking.hostName = "maverick";
   networking.networkmanager.enable = true;
@@ -41,6 +43,9 @@
     # cloudflared use it log in
     chisel
     attic-client
+    # (ollama.override {
+    #   acceleration = "cuda";
+    # })
   ];
 
   programs.git.enable = true;
@@ -53,6 +58,20 @@
     53 # dns resolver
     80 # http traffic, most commonly addressed by cloudflare tunnel
   ];
+
+  nix = {
+    settings = {
+      substituters = [
+        "https://cache.nixos-cuda.org"
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+  };
 
   networking.firewall.allowedUDPPorts = [
     53 # udp dns resolver
