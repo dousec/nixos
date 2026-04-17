@@ -13,11 +13,11 @@
     ]
   );
 
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev";
-  # boot.loader.grub.device = "/dev/vda";
+  # boot.loader.grub.efiSupport = true;
+  # boot.loader.grub.device = "nodev";
+  boot.loader.grub.device = "/dev/vda";
 
   boot.kernel.sysctl = {
     "net.core.rmem_max" = 7500000;
@@ -77,11 +77,11 @@
     53 # udp dns resolver
   ];
 
-  topology = {
-    self = {
-      hardware.info = "i5 6400 16GB DDR4 GTX 1060 3GB SSD 1TB";
-    };
-  };
+  # topology = {
+  #   self = {
+  #     hardware.info = "i5 6400 16GB DDR4 GTX 1060 3GB SSD 1TB";
+  #   };
+  # };
 
   system.stateVersion = "25.11"; # Yes, I read the comment
 }
