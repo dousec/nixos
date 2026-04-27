@@ -15,7 +15,9 @@ in
             "*.dousec.org"
           ];
           dnsProvider = "cloudflare";
-          credentialsFile = config.sops.secrets."cloudflared/dns/token".path;
+          credentialFiles = {
+            "SECRET_FILE" = config.sops.secrets."cloudflared/dns/token".path;
+          };
         };
       };
     };

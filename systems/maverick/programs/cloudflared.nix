@@ -1,6 +1,11 @@
 { config, ... }:
 let
-  inherit (config.services) grafana memos writefreely;
+  inherit (config.services)
+    grafana
+    memos
+    writefreely
+    forgejo
+    ;
   get = opt: toString opt;
 in
 {
@@ -15,6 +20,8 @@ in
 
             "blog.dousec.org" = "http://localhost:${get writefreely.settings.server.port}";
             "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
+
+            "git.dousec.rg" = "http://localhost:${get forgejo.settings.server.HTTP_PORT}";
 
             "attic.dousec.org" = "http://localhost:8081";
 
