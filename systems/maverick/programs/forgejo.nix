@@ -2,17 +2,19 @@
 {
   services = {
     forgejo = {
-      enable = true;
+      enable = false;
       database.type = "postgres";
       lfs.enable = true;
       settings = {
         server = {
           DOMAIN = "git.dousec.org";
           ROOT_URL = "https://git.dousec.org/";
-          HTTP_PORT = 8083;
+          HTTP_PORT = 8086;
         };
-        service.DISABLE_REGISTRATION = true;
-        actions = {
+        
+	service.DISABLE_REGISTRATION = true;
+        
+	actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "github";
         };
