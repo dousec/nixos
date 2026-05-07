@@ -14,7 +14,7 @@
       enable = true;
       package = pkgs.nextcloud33;
       hostName = "cloud.dousec.org";
-      webserver = "caddy";
+      https = true;
       configureRedis = true;
       config = {
         adminpassFile = config.sops.secrets."users/root/pass".path;
@@ -29,15 +29,18 @@
           passwordFile = config.sops.secrets."users/paulov/pass".path;
         };
       };
-      settings = {
-        mail_smtpmode = "sendmail";
-        mail_sendmailmode = "pipe";
-      };
     };
 
     redis.servers.nextcloud = {
       enable = true;
       port = 0;
     };
+
+    nginx.virtualHosts."${config.services.nextcloud.hostName}".listen = [
+      {
+        addr = "127.0.0.1";
+        port = 8087;
+      }
+    ];
   };
 }

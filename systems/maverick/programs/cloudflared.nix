@@ -4,7 +4,6 @@ let
     grafana
     memos
     writefreely
-    forgejo
     ;
   get = opt: toString opt;
 in
@@ -22,13 +21,12 @@ in
             "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
 
             # "git.dousec.org" = "http://localhost:${get forgejo.settings.server.HTTP_PORT}";
-
+            "cloud.dousec.org" = "http://localhost:8087";
             "attic.dousec.org" = "http://localhost:8081";
 
             # xmpp and mail are handled by chisel server side
 
             # caddy handled
-            "cloud.dousec.org" = "http://localhost:80";
             "dousec.org" = "http://localhost:80";
             "paulov.dousec.org" = "http://localhost:80";
             "jesus.dousec.org" = "http://localhost:80";
