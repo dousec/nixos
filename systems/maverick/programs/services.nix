@@ -25,7 +25,7 @@
         description = "chisel client to forward ports";
         after = [ "network-online.target" ];
         wants = [ "network-online.target" ];
-        # wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "multi-user.target" ];
 
         serviceConfig = {
           Restart = "always";
