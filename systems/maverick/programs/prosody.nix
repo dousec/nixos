@@ -34,6 +34,8 @@ in
       ];
       httpFileShare = {
         domain = "upload.dousec.org";
+        size_limit = 200 * 1024 * 1024;
+        daily_quota = 2 * config.services.prosody.httpFileShare.size_limit;
       };
       modules = {
         http_files = true;
