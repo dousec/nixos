@@ -29,6 +29,12 @@
           passwordFile = config.sops.secrets."users/paulov/pass".path;
         };
       };
+      settings = {
+        mail_sendmailmode = "pipe";
+        mail_smtpmode = "sendmail";
+        mail_from_address = "noreply";
+        mail_domain = "dousec.org";
+      };
     };
 
     redis.servers.nextcloud = {
