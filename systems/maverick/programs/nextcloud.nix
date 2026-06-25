@@ -23,12 +23,6 @@
       database = {
         createLocally = true;
       };
-      ensureUsers = {
-        paulov = {
-          email = "paulov@dousec.org";
-          passwordFile = config.sops.secrets."users/paulov/pass".path;
-        };
-      };
       settings = {
         mail_sendmailmode = "pipe";
         mail_smtpmode = "sendmail";

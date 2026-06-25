@@ -2,10 +2,14 @@
 {
   services = {
     litellm = {
-      enable = true;
+      enable = false;
       port = 8085;
       openFirewall = true;
       settings = {
+        general_settings = {
+	  master_key = "$(cat ${config.sops.secrets."litellm/master_key".path})";
+	};
+
         model_list = [
           {
             model_name = "gemini-2.5-flash-lite";

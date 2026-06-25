@@ -3,7 +3,7 @@
   services = {
     github-runners = {
       "maverick-dousec" = {
-        enable = true;
+        enable = false;
         url = "https://github.com/dousec";
         tokenFile = config.sops.secrets."github/dousec/runner".path;
         extraPackages = [

@@ -20,6 +20,8 @@
 
       "grafana/secret_key" = { };
 
+      "litellm/master_key" = { };
+      
       "api/gemini/token" = { };
       "api/groq/token" = { };
 
