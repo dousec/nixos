@@ -1,5 +1,5 @@
 keys:
-  - &qemu_maverick age176r0juvmv0fmaq6zkrswhqjcn7a4atjra7hedfydagr4tfnf5vqs89y68d
+  - &qemu_maverick age1hrx74eau8k4ewdy8a22l3mc2cjw8hhswpv7uk6m4gg2x0nxgmpgq6323ps
   - &server_maverick age1r2wweckanmcefynnz0fzglumfvgk6v4k6ckgzvdkg6fddrwyl9wqlwx84a
   - &admin_paulov age15gwvllh0e2ngluc0q2csn23n86hefcqphf9h9yzrc4twq55fn52sum8nq7
 creation_rules:
