@@ -7,9 +7,9 @@
     age.keyFile = "/root/.config/sops/age/keys.txt";
 
     secrets = {
-      "user-password" = {
-        owner = "writefreely"; # writefreely requests it
-      };
+      # "user-password" = {
+      #   owner = "writefreely"; # writefreely requests it
+      # };
 
       "users/root/pass" = { };
       "users/paulov/pass" = { };

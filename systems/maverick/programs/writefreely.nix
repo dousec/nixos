@@ -2,12 +2,8 @@
 {
   services = {
     writefreely = {
-      enable = true;
+      enable = false;
       host = "blog.dousec.org";
-      admin = {
-        name = "root";
-        initialPasswordFile = config.sops.secrets."user-password".path;
-      };
       settings = {
         app = {
           site_name = "Dou";
