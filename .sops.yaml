@@ -1,5 +1,5 @@
 keys:
-  - &qemu_maverick age1ppenf20p4gdhwuhqzjruyzcu23g4rjtra29w9yr0xu4xsv9aqeusx2gyx8
+  - &qemu_maverick age1ns3f5tngge09jtdk42nkaxq7uqdqncfwvhse4e74uhqdwlqmyvns86uf03
   - &admin_paulov age15gwvllh0e2ngluc0q2csn23n86hefcqphf9h9yzrc4twq55fn52sum8nq7
 creation_rules:
   - path_regex: secrets/maverick/[^/]+\.(yaml|json|env|ini)$
