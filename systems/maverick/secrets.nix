@@ -12,7 +12,6 @@
       # };
 
       "users/root/pass" = { };
-      "users/paulov/pass" = { };
 
       "msmtp/users/default/pass" = {
         owner = "nextcloud";
