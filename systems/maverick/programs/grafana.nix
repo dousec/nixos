@@ -2,7 +2,7 @@
 {
   services = {
     grafana = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       settings = {
         server = {
@@ -19,7 +19,7 @@
         };
       };
       provision = {
-        enable = true;
+        enable = false;
         datasources = {
           settings = {
             datasources = [
