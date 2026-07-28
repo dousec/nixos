@@ -34,6 +34,7 @@
       "attic/server-token" = { };
 
       "github/dousec/runner" = { };
+      "github/dousec/builder" = { };
     };
   };
 }
