@@ -1,7 +1,6 @@
 { config, ... }:
 let
   inherit (config.services)
-    grafana
     memos
     writefreely
     ;

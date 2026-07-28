@@ -7,8 +7,8 @@
       openFirewall = true;
       settings = {
         general_settings = {
-	  master_key = "$(cat ${config.sops.secrets."litellm/master_key".path})";
-	};
+          master_key = "$(cat ${config.sops.secrets."litellm/master_key".path})";
+        };
 
         model_list = [
           {
