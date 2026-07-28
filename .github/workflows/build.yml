@@ -1,0 +1,18 @@
+name: maverick-rebuild
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - systems/maverick/**
+      - users/**
+      - modules/**
+      - flake.nix
+      - flake.lock
+
+jobs:
+  rebuild:
+    runs-on: [self-hosted, maverick-builder]
+    steps:
+      - uses: actions/checkout@v6
+      - run: nixos-rebuild switch --flake .

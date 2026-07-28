@@ -1,0 +1,25 @@
+name: remote-deploy
+on:
+  workflow_dispatch:
+    inputs:
+      target_host:
+        description: Host to deploy to
+        required: true
+        type: choice
+        options:
+          - maverick
+          - all
+jobs:
+  deploy:
+    runs-on: [self-hosted, builders]
+    steps:
+      - uses: actions/checkout@v6
+      - name: Deploy
+        run: |
+          TARGETS=${{ inputs.target_host }}
+          if [ "$TARGETS" = "all" ]; then
+            TARGETS=$(ls systems/)
+          fi
+          for host in $TARGETS; do
+            echo "Would deploy to $host on the future"
+          done
