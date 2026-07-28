@@ -15,7 +15,7 @@ in
         "0a2cf345-ad5c-4c81-82f1-ae6c0b63185d" = {
           credentialsFile = config.sops.secrets."cloudflared/tunnel/argo_key".path;
           ingress = {
-            "foo.dousec.org" = "http://localhost:${get grafana.settings.server.http_port}";
+            # "foo.dousec.org" = "http://localhost:${get grafana.settings.server.http_port}";
 
             "blog.dousec.org" = "http://localhost:${get writefreely.settings.server.port}";
             "notes.dousec.org" = "http://localhost:${get memos.settings.MEMOS_PORT}";
