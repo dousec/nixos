@@ -12,7 +12,9 @@ on:
 
 jobs:
   rebuild:
-    runs-on: [self-hosted, maverick-builder]
+    runs-on:
+      group: builders
+      labels: [self-hosted, maverick-builder]
     steps:
       - uses: actions/checkout@v6
       - run: nixos-rebuild switch --flake .
