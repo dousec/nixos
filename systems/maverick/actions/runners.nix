@@ -27,5 +27,9 @@
     };
   };
 
+  systemd.services."github-runner-maverick-dousec".serviceConfig.ReadWritePaths = [
+    "/opt/gh/"
+  ];
+
   nix.settings.trusted-users = [ "github-runner-maverick-builder" ];
 }
