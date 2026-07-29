@@ -27,8 +27,9 @@ in
 
             # caddy handled
             "dousec.org" = "http://localhost:80";
-            "paulov.dousec.org" = "http://localhost:80";
-            "jesus.dousec.org" = "http://localhost:80";
+            "papers.dousec.org" = "http://localhost:80";
+            # "paulov.dousec.org" = "http://localhost:80";
+            # "jesus.dousec.org" = "http://localhost:80";
           };
           default = "http_status:404";
         };
