@@ -55,7 +55,7 @@ in
 
         "papers.dousec.org:80".extraConfig = ''
           	          tls internal
-                    	  root * /var/lib/www/papers.dousec.org
+                    	  root * /opt/gh/www/papers.dousec.org
                     	  file_server
                     	'';
 

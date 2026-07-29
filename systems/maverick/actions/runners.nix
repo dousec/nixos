@@ -21,6 +21,7 @@
           podman
           git
           rsync
+          bun
         ];
       };
     };
