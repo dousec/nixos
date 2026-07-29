@@ -6,8 +6,8 @@
         enable = true;
         url = "https://github.com/dousec";
         tokenFile = config.sops.secrets."github/dousec/builder".path;
-        extraPackages = [
-          pkgs.nix
+        extraPackages = with pkgs; [
+          nix
         ];
       };
 
@@ -15,11 +15,12 @@
         enable = true;
         url = "https://github.com/dousec";
         tokenFile = config.sops.secrets."github/dousec/runner".path;
-        extraPackages = [
-          pkgs.nix
-          pkgs.attic-client
-          pkgs.podman
-          pkgs.git
+        extraPackages = with pkgs; [
+          nix
+          attic-client
+          podman
+          git
+          rsync
         ];
       };
     };
