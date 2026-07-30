@@ -2,7 +2,7 @@
 {
   services = {
     adguardhome = {
-      enable = true;
+      enable = false;
       port = 8080;
       openFirewall = true;
       settings = {

@@ -23,9 +23,6 @@
           ensureDBOwnership = true;
         }
       ];
-      settings = {
-        listen_addresses = "*";
-      };
     };
   };
 

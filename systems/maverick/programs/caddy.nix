@@ -32,9 +32,9 @@ in
           reverse_proxy http://localhost:${get adguardhome.port}
         '';
 
-        "n8n.me:80".extraConfig = ''
+        "n8n.dousec.org:80".extraConfig = ''
           	  tls internal
-          	  reverse_proxy http://localhost:8081
+          	  reverse_proxy http://localhost:8082
           	'';
 
         "dousec.org:80".extraConfig = ''
