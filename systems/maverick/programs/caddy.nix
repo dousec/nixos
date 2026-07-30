@@ -28,24 +28,14 @@ in
       enable = true;
       virtualHosts = {
         "dns.me:80".extraConfig = ''
+          tls internal
+          reverse_proxy http://localhost:${get adguardhome.port}
+        '';
+
+        "n8n.me:80".extraConfig = ''
           	  tls internal
-          	  reverse_proxy http://localhost:${get adguardhome.port}
+          	  reverse_proxy http://localhost:8081
           	'';
-
-        # "dashboard.me:80".extraConfig = ''
-        #   	  tls internal
-        #           reverse_proxy http://localhost:${get grafana.settings.server.http_port}
-        # '';
-
-        # "n8n.me:80".extraConfig = ''
-        #          	  tls internal
-        #          	  reverse_proxy http://localhost:${get n8n.environment.N8N_PORT}
-        #          	'';
-
-        # "litellm.me:80".extraConfig = ''
-        #   	  tls internal
-        #   	  reverse_proxy http://localhost:${get litellm.port}
-        #   	'';
 
         "dousec.org:80".extraConfig = ''
           	          tls internal
@@ -58,18 +48,6 @@ in
                     	  root * /opt/gh/www/papers.dousec.org
                     	  file_server
                     	'';
-
-        # "paulov.dousec.org:80".extraConfig = ''
-        #             		  tls internal
-        #   			  root * /var/lib/www/paulov.dousec.org
-        #   			  file_server
-        #             		'';
-
-        # "jesus.dousec.org:80".extraConfig = ''
-        #             		  tls internal
-        #   			  root * /var/lib/www/jesus.dousec.org
-        #   			  file_server
-        #             		'';
 
       };
     };

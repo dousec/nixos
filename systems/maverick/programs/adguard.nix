@@ -33,7 +33,6 @@
               "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt"
               "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt"
               "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt"
-              "https://raw.githubusercontent.com/ph00lt0/blocklist/master/blocklist.txt"
             ];
       };
     };
