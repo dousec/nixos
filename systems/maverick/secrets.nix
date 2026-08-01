@@ -15,6 +15,7 @@
         owner = "acme";
       };
       "cloudflared/tunnel/argo_key" = { };
+      "gitea/dou/runner" = { };
       "github/dousec/builder" = { };
       "github/dousec/runner" = { };
       "grafana/secret_key" = { };
@@ -26,10 +27,17 @@
       "users/root/pass" = { };
     };
 
-    templates."n8n-env" = {
-      content = ''
-        DB_POSTGRESDB_PASSWORD=${config.sops.placeholder."n8n/db_password"}
-      '';
+    templates = {
+      "n8n-env" = {
+        content = ''
+          DB_POSTGRESDB_PASSWORD=${config.sops.placeholder."n8n/db_password"}
+        '';
+      };
+      "gitea-maverick-env" = {
+        content = ''
+          TOKEN=${config.sops.placeholder."gitea/dou/runner"}
+        '';
+      };
     };
   };
 }

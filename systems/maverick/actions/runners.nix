@@ -25,11 +25,27 @@
         ];
       };
     };
+
+    gitea-actions-runner = {
+      package = pkgs.forgejo-runner;
+      instances = {
+        "maverick-dou" = {
+          enable = true;
+          name = "maverick-dou";
+          url = "https://git.dousec.org";
+          tokenFile = config.sops.templates."gitea-maverick-env".path;
+          labels = [
+            "native:host"
+          ];
+        };
+      };
+    };
   };
 
-  systemd.services."github-runner-maverick-dousec".serviceConfig.ReadWritePaths = [
-    "/opt/gh/"
-  ];
-
+  systemd.services = {
+    "github-runner-maverick-dousec".serviceConfig.ReadWritePaths = [
+      "/opt/gh/"
+    ];
+  };
   nix.settings.trusted-users = [ "github-runner-maverick-builder" ];
 }
