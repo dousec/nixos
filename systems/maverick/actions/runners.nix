@@ -37,6 +37,13 @@
           labels = [
             "native:host"
           ];
+          hostPackages = with pkgs; [
+            nix
+            attic-client
+            podman
+            git
+            rsync
+          ];
         };
       };
     };
