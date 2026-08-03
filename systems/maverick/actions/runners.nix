@@ -38,6 +38,7 @@
             "native:host"
           ];
           hostPackages = with pkgs; [
+            bash
             nix
             attic-client
             podman
@@ -54,5 +55,9 @@
       "/opt/gh/"
     ];
   };
-  nix.settings.trusted-users = [ "github-runner-maverick-builder" ];
+
+  nix.settings.trusted-users = [
+    "github-runner-maverick-builder"
+    "gitea-runner"
+  ];
 }
