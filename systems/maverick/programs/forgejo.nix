@@ -11,7 +11,7 @@
           ROOT_URL = "https://git.dousec.org/";
           HTTP_PORT = 8086;
           DISABLE_SSH = true;
-
+          LANDING_PAGE = "explore";
         };
 
         service = {
