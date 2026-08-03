@@ -11,9 +11,13 @@
           ROOT_URL = "https://git.dousec.org/";
           HTTP_PORT = 8086;
           DISABLE_SSH = true;
+
         };
 
-        service.DISABLE_REGISTRATION = true;
+        service = {
+          REGISTER_EMAIL_CONFIRM = true;
+          EMAIL_DOMAIN_ALLOWLIST = "dousec.org";
+        };
 
         actions = {
           ENABLED = true;
