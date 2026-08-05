@@ -39,7 +39,7 @@ in
 
         "dousec.org:80".extraConfig = ''
           	          tls internal
-                    	  root * /var/lib/www/dousec.org
+                    	  root * /opt/gh/www/dousec.org
                     	  file_server
                     	'';
 
