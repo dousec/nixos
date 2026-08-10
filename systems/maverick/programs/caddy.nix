@@ -27,7 +27,7 @@ in
     caddy = {
       enable = true;
       globalConfig = ''
-       tls internal
+        tls internal
       '';
       virtualHosts = {
         "dns.me:80".extraConfig = ''
@@ -48,8 +48,8 @@ in
           file_server
         '';
 
-        "home.paulov.dev".extraConfig = ''
-          respond "Hello World"
+        "home.paulov.dev:80".extraConfig = ''
+          	  respond "hllo world"
         '';
 
       };
