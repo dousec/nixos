@@ -16,7 +16,7 @@ in
           ];
           dnsProvider = "cloudflare";
           credentialFiles = {
-            "SECRET_FILE" = config.sops.secrets."cloudflared/dns/token".path;
+            "SECRET_FILE" = config.sops.secrets."cloudflared/dousec/dns/token".path;
           };
         };
       };
@@ -33,21 +33,26 @@ in
         '';
 
         "n8n.dousec.org:80".extraConfig = ''
-          	  tls internal
-          	  reverse_proxy http://localhost:8082
-          	'';
+          tls internal
+          reverse_proxy http://localhost:8082
+        '';
 
         "dousec.org:80".extraConfig = ''
-          	          tls internal
-                    	  root * /var/lib/www/dousec.org
-                    	  file_server
-                    	'';
+          tls internal
+          root * /opt/gh/www/dousec.org
+          file_server
+        '';
 
         "papers.dousec.org:80".extraConfig = ''
-          	          tls internal
-                    	  root * /opt/gh/www/papers.dousec.org
-                    	  file_server
-                    	'';
+          tls internal
+          root * /opt/gh/www/papers.dousec.org
+          file_server
+        '';
+
+        "home.paulov.dev".extraConfig = ''
+          tls internal
+          respond "Hello World"
+        '';
 
       };
     };

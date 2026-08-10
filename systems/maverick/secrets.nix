@@ -11,10 +11,11 @@
       "api/groq/token" = { };
       "attic/server-token" = { };
       "chisel/pass" = { };
-      "cloudflared/dns/token" = {
+      "cloudflared/dousec/dns/token" = {
         owner = "acme";
       };
-      "cloudflared/tunnel/argo_key" = { };
+      "cloudflared/dousec/tunnel/argo_key" = { };
+      "cloudflared/paulov/tunnel/argo_key" = { };
       "gitea/dou/runner" = { };
       "github/dousec/builder" = { };
       "github/dousec/runner" = { };
