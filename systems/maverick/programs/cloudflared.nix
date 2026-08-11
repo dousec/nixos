@@ -20,7 +20,7 @@
         "10c3b49e-4690-4b4a-b83d-a7f81b8c8549" = {
           credentialsFile = config.sops.secrets."cloudflared/paulov/tunnel/argo_key".path;
           ingress = {
-            "home.paulov.dev" = "http://localhost:80";
+            "paulov.dev" = "http://localhost:80";
           };
           default = "http_status:404";
         };
