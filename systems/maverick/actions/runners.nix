@@ -32,7 +32,7 @@
         "maverick-dou" = {
           enable = true;
           name = "maverick-dou";
-          url = "https://git.dousec.org";
+          url = "https://git.paulov.dev";
           tokenFile = config.sops.templates."gitea-maverick-env".path;
           labels = [
             "native:host"

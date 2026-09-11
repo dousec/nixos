@@ -7,8 +7,8 @@
       lfs.enable = true;
       settings = {
         server = {
-          DOMAIN = "git.dousec.org";
-          ROOT_URL = "https://git.dousec.org/";
+          DOMAIN = "git.paulov.dev";
+          ROOT_URL = "https://git.paulov.dev/";
           HTTP_PORT = 8086;
           DISABLE_SSH = true;
           LANDING_PAGE = "explore";
