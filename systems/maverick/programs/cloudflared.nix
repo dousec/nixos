@@ -11,7 +11,6 @@
             "cloud.dousec.org" = "http://localhost:8087";
             "dousec.org" = "http://localhost:80";
             "git.dousec.org" = "http://localhost:8086";
-            "n8n.dousec.org" = "http://localhost:80";
             "papers.dousec.org" = "http://localhost:80";
           };
           default = "http_status:404";
@@ -21,9 +20,9 @@
           credentialsFile = config.sops.secrets."cloudflared/paulov/tunnel/argo_key".path;
           ingress = {
             "ai.paulov.dev" = "http://localhost:8083";
-            "paulov.dev" = "http://localhost:80";
+            "flows.paulov.dev" = "http://localhost:8082";
             "git.paulov.dev" = "http://localhost:8086";
-            "flows.paulov.dev" = "http://localhost:80";
+            "paulov.dev" = "http://localhost:80";
           };
           default = "http_status:404";
         };

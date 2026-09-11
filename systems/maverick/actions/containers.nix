@@ -15,7 +15,7 @@
           environment = {
             N8N_PORT = "8082";
             N8N_PROTOCOL = "http";
-            N8N_HOST = "n8n.dousec.org";
+            N8N_HOST = "flows.paulov.dev";
             DB_TYPE = "postgresdb";
             DB_POSTGRESDB_HOST = "localhost";
             DB_POSTGRESDB_PORT = "5432";
