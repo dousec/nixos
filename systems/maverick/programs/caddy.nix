@@ -51,7 +51,7 @@ in
 
         "paulov.dev:80".extraConfig = ''
           	  tls internal
-                    respond "coming soon.."
+              redir https://github.com/hyduez 301
         '';
 
       };
