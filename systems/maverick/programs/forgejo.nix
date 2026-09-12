@@ -16,7 +16,7 @@
 
         service = {
           REGISTER_EMAIL_CONFIRM = true;
-          EMAIL_DOMAIN_ALLOWLIST = "dousec.org";
+          EMAIL_DOMAIN_ALLOWLIST = "dousec.org, paulov.dev";
         };
 
         actions = {
