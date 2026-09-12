@@ -19,7 +19,6 @@
         "10c3b49e-4690-4b4a-b83d-a7f81b8c8549" = {
           credentialsFile = config.sops.secrets."cloudflared/paulov/tunnel/argo_key".path;
           ingress = {
-            "ai.paulov.dev" = "http://localhost:8083";
             "flows.paulov.dev" = "http://localhost:8082";
             "git.paulov.dev" = "http://localhost:8086";
             "paulov.dev" = "http://localhost:80";
