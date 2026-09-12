@@ -10,6 +10,10 @@ let
       }
       {
         nixpkgs.hostPlatform = "x86_64-linux";
+        nix.settings.experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
         # nixpkgs.config.permittedInsecurePackages = [ "nodejs-20.20.2" "nodejs-slim-20.20.2" ];
         # nixpkgs.config.allowUnfree = true; # propietary CUDA drivers for NVIDIA GPUs
         # nixpkgs.config.nvidia.acceptLicense = true;
