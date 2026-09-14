@@ -34,6 +34,15 @@
           ];
           autoStart = true;
         };
+
+        bifrost = {
+          image = "docker.io/maximhq/bifrost";
+          ports = [ "8083:8080" ];
+          volumes = [
+            "/opt/bifrost:/app/data"
+          ];
+          autoStart = true;
+        };
       };
     };
   };
