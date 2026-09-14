@@ -32,6 +32,7 @@
       "n8n-env" = {
         content = ''
           DB_POSTGRESDB_PASSWORD=${config.sops.placeholder."n8n/db_password"}
+          N8N_ENCRYPTION_KEY=${config.sops.placeholder."n8n/db_password"}
         '';
       };
       "gitea-maverick-env" = {
