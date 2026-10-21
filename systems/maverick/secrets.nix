@@ -11,12 +11,12 @@
       "api/groq/token" = { };
       "attic/server-token" = { };
       "chisel/pass" = { };
-      "cloudflared/dousec/dns/token" = {
-        owner = "acme";
-      };
-      "cloudflared/dousec/tunnel/argo_key" = { };
+      # "cloudflared/dousec/dns/token" = {
+      #   owner = "acme";
+      # };
+      # "cloudflared/dousec/tunnel/argo_key" = { };
       "cloudflared/paulov/tunnel/argo_key" = { };
-      "gitea/dou/runner" = { };
+      # "gitea/dou/runner" = { };
       "github/dousec/builder" = { };
       "github/dousec/runner" = { };
       "grafana/secret_key" = { };
@@ -35,11 +35,11 @@
           N8N_ENCRYPTION_KEY=${config.sops.placeholder."n8n/db_password"}
         '';
       };
-      "gitea-maverick-env" = {
-        content = ''
-          TOKEN=${config.sops.placeholder."gitea/dou/runner"}
-        '';
-      };
+      # "gitea-maverick-env" = {
+      #   content = ''
+      #     TOKEN=${config.sops.placeholder."gitea/dou/runner"}
+      #   '';
+      # };
     };
   };
 }

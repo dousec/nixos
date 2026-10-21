@@ -16,7 +16,7 @@
 
         service = {
           REGISTER_EMAIL_CONFIRM = true;
-          EMAIL_DOMAIN_ALLOWLIST = "dousec.org, paulov.dev";
+          EMAIL_DOMAIN_ALLOWLIST = "paulov.dev";
         };
 
         actions = {
@@ -26,9 +26,9 @@
 
         mailer = {
           ENABLED = true;
-          SMTP_ADDR = "mail.dousec.org";
-          FROM = "noreply@dousec.org";
-          USER = "noreply@dousec.org";
+          SMTP_ADDR = "mx.paulov.dev";
+          FROM = "noreply@paulov.dev";
+          USER = "noreply@paulov.dev";
         };
       };
 

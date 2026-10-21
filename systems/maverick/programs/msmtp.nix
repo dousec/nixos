@@ -10,9 +10,9 @@
       accounts = {
         default = {
           auth = true;
-          host = "mail.dousec.org";
-          from = "noreply@dousec.org";
-          user = "noreply@dousec.org";
+          host = "mx.paulov.dev";
+          from = "noreply@paulov.dev";
+          user = "noreply@paulov.dev";
           passwordeval = "cat ${config.sops.secrets."msmtp/users/default/pass".path}";
         };
       };

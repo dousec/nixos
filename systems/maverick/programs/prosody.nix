@@ -1,11 +1,11 @@
 { config, ... }:
-let
-  sslCertDir = config.security.acme.certs."dousec.org".directory;
-in
+# let
+# sslCertDir = config.security.acme.certs."dousec.org".directory;
+# in
 {
   services = {
     prosody = {
-      enable = true;
+      enable = false;
       admins = [ "paulov@dousec.org" ];
       allowRegistration = false;
       ssl = {

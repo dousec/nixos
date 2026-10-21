@@ -13,7 +13,7 @@
     nextcloud = {
       enable = true;
       package = pkgs.nextcloud35;
-      hostName = "cloud.dousec.org";
+      hostName = "hub.paulov.dev";
       https = true;
       configureRedis = true;
       config = {
@@ -27,7 +27,7 @@
         mail_sendmailmode = "pipe";
         mail_smtpmode = "sendmail";
         mail_from_address = "noreply";
-        mail_domain = "dousec.org";
+        mail_domain = "paulov.dev";
       };
     };
 
