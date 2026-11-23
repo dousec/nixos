@@ -8,10 +8,10 @@
       enable = false;
       admins = [ "paulov@dousec.org" ];
       allowRegistration = false;
-      ssl = {
-        cert = "${sslCertDir}/fullchain.pem";
-        key = "${sslCertDir}/key.pem";
-      };
+      # ssl = {
+      #   cert = "${sslCertDir}/fullchain.pem";
+      #   key = "${sslCertDir}/key.pem";
+      # };
       virtualHosts = {
         "dousec.org" = {
           domain = "dousec.org";
