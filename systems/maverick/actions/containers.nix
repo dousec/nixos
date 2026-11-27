@@ -85,18 +85,16 @@ let
       QUEUE_CONNECTION = "redis";
       SESSION_DRIVER = "redis";
       FILESYSTEM_DRIVER = "local";
-      # Detras de cloudflared con TLS terminado en Cloudflare.
       APP_URL = "https://${formsHost}";
       FRONT_URL = "https://${formsHost}";
       JWT_SKIP_IP_UA_VALIDATION = "false";
-      # n8n corre con --network=host; desde el bridge "localhost" no sirve.
       WEBHOOKS_ALLOW_PRIVATE_URLS = "true";
       PHP_MEMORY_LIMIT = "1G";
       PHP_MAX_EXECUTION_TIME = "600";
       PHP_UPLOAD_MAX_FILESIZE = "64M";
       PHP_POST_MAX_SIZE = "64M";
     };
-    volumes = [ "forms-storage:/usr/share/nginx/html/storage:rw" ];
+    volumes = [ "/opt/forms/storage:/usr/share/nginx/html/storage:Z,U" ];
     autoStart = true;
   };
 in
@@ -154,7 +152,7 @@ in
             POSTGRES_USER = "opnform";
           };
           environmentFiles = [ config.sops.templates."forms-db-env".path ];
-          volumes = [ "forms-db-data:/var/lib/postgresql/data:Z" ];
+          volumes = [ "/opt/forms/db-data:/var/lib/postgresql/data:Z,U" ];
           autoStart = true;
         };
 
@@ -165,7 +163,7 @@ in
             "--appendonly"
             "yes"
           ];
-          volumes = [ "forms-redis-data:/data:Z" ];
+          volumes = [ "/opt/forms/redis-data:/data:Z,U" ];
           autoStart = true;
         };
 
