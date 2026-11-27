@@ -5,6 +5,11 @@ let
   formsVersion = "2.8.6";
 
   formsNginxConf = ''
+    map $request_uri $api_uri {
+      ~^/api(/.*$) $1;
+      default $request_uri;
+    }
+
     server {
       listen 80;
       server_name _;
@@ -46,7 +51,7 @@ let
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root/index.php;
-        fastcgi_param REQUEST_URI $request_uri;
+        fastcgi_param REQUEST_URI $api_uri;
         fastcgi_param HTTP_X_FORWARDED_FOR $proxy_add_x_forwarded_for;
         fastcgi_param HTTP_X_FORWARDED_HOST $http_x_forwarded_host;
         fastcgi_param HTTP_X_FORWARDED_PORT $http_x_forwarded_port;
